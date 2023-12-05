@@ -1,8 +1,9 @@
 <?php
 
 include __DIR__ . '/Genre.php';
+include __DIR__ . '/Product.php';
 
-class Movie {
+class Movie extends Product{
     public $id;
     public $title;
     public $original_title;
