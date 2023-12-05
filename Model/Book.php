@@ -6,14 +6,16 @@ class Book extends Product{
     private $titolo;
     private $imgUrl;
     private $descrizione;
+    private $autori;
 
-    function __construct($titolo, $imgUrl, $descrizione, $prezzo, $sconto, $quantitá){
+    function __construct($titolo, $imgUrl, $descrizione, $prezzo, $sconto, $quantitá, $autori){
 
         parent:: __construct($prezzo, $sconto, $quantitá);
 
         $this->titolo = $titolo;
         $this->imgUrl = $imgUrl;
         $this->descrizione = $descrizione;
+        $this->autori = $autori;
     }
 
     public static function getBooks(){
@@ -23,18 +25,26 @@ class Book extends Product{
         $books = [];
 
         foreach($booksList as $item){
-            $book = new Book($item['title'], $item['thumbnailUrl'], $item['longDescription'], rand(1, 100), rand(40, 100), rand(1, 100));
+            $book = new Book($item['title'], $item['thumbnailUrl'], $item['longDescription'], rand(1, 100), rand(40, 100), rand(1, 100), $item['authors']);
             array_push($books, $book);
         }
 
         return $books;
     }
 
+    public function printAutori(){
+        $autoriString = '';
+        for($i = 0; $i < count($this->autori); $i++){
+            $autoriString .= $this->autori[$i] . ', ';
+        }
+        return $autoriString;
+    }
+
     public function printCard(){
         $image = $this->imgUrl;
         $title = $this->titolo;
         $content = strlen($this->descrizione) > 28 ? substr($this->descrizione, 0, 28) . '...' : $this->descrizione;
-        $custom = "";
+        $custom = $this->printAutori();
         $genere = "";
         $prezzo = $this->prezzo;
         $quantitá = $this->quantitá;
