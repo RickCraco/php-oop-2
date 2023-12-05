@@ -12,7 +12,7 @@ class Movie {
     public $original_language;
     public Genre $genre;
 
-    function __construct($id, $title, $original_title, $overview, $vote, $poster_path, $original_language, $genre){
+    function __construct($id, $title, $original_title, $overview, $vote, $poster_path, $original_language,Genre $genre){
         $this->id = $id;
         $this->title = $title;
         $this->original_title = $original_title;
