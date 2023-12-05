@@ -27,4 +27,17 @@ class Book extends Product{
             array_push($books, $book);
         }
     }
+
+    public function printCard(){
+        $image = $this->imgUrl;
+        $title = $this->titolo;
+        $content = $this->descrizione;
+        $custom = "";
+        $genere = "";
+        $prezzo = $this->prezzo;
+        $quantitá = $this->quantitá;
+        $sconto = $this->sconto . "%";
+
+        include __DIR__."/../Views/card.php";
+    }
 }
