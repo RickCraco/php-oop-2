@@ -13,6 +13,9 @@
                 <div>
                     <?= $genere ?>
                 </div>
+                <div>
+                    <?= "€" . $prezzo ?>
+                </div>
             </div>
 
         </div>

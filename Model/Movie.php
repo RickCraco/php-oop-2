@@ -13,7 +13,10 @@ class Movie extends Product{
     public $original_language;
     public Genre $genre;
 
-    function __construct($id, $title, $original_title, $overview, $vote, $poster_path, $original_language,Genre $genre){
+    function __construct($id, $title, $original_title, $overview, $vote, $poster_path, $original_language,Genre $genre,$prezzo,$sconto,$quantitá){
+
+        parent::__construct($prezzo,$sconto,$quantitá);
+
         $this->id = $id;
         $this->title = $title;
         $this->original_title = $original_title;
@@ -31,6 +34,7 @@ class Movie extends Product{
         $content = $this->overview;
         $custom = $this->getVote();
         $genere = $this->genre->name;
+        $prezzo = $this->prezzo;
 
         include __DIR__."/../Views/card.php";
     }
@@ -61,7 +65,7 @@ foreach($genreList as $item){
 
 foreach($movieList as $item){
     $randomGenre = $genres[rand(0, count($genres)-1)];
-    $movie = new Movie($item['id'], $item['title'], $item['original_title'], $item['overview'], $item['vote_average'], $item['poster_path'], $item['original_language'], $randomGenre);
+    $movie = new Movie($item['id'], $item['title'], $item['original_title'], $item['overview'], $item['vote_average'], $item['poster_path'], $item['original_language'], $randomGenre,rand(0,100),rand(0,50),rand(0,100));
     array_push($movies, $movie);
 }
 
