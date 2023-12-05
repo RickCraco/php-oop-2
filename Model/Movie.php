@@ -36,6 +36,11 @@ class Movie extends Product{
         $genere = $this->genre->name;
         $prezzo = $this->prezzo;
         $quantitá = $this->quantitá;
+        $sconto = 0;
+
+        if($this->title == "Spider-Man: Across the Spider-Verse"){
+            $sconto = $this->getDiscount() . "%";
+        }
 
         include __DIR__."/../Views/card.php";
     }

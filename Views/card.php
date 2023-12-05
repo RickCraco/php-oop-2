@@ -20,6 +20,12 @@
                     <span>Scorte : </span>
                     <?= $quantitá ?>
                 </div>
+                <div>
+                    <span></span>
+                    <?php if($sconto){
+                        echo $sconto;
+                    } ?>
+                </div>
             </div>
 
         </div>

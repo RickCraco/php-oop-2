@@ -10,6 +10,10 @@ class Product{
         $this->sconto = $sconto;
         $this->quantitá = $quantitá;
     }
+
+    public function getDiscount(){
+        return $this->sconto;
+    }
 }
 
 
