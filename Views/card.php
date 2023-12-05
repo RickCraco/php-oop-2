@@ -16,6 +16,10 @@
                 <div>
                     <?= "€" . $prezzo ?>
                 </div>
+                <div>
+                    <span>Scorte : </span>
+                    <?= $quantitá ?>
+                </div>
             </div>
 
         </div>

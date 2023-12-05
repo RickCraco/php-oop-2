@@ -35,6 +35,7 @@ class Movie extends Product{
         $custom = $this->getVote();
         $genere = $this->genre->name;
         $prezzo = $this->prezzo;
+        $quantitá = $this->quantitá;
 
         include __DIR__."/../Views/card.php";
     }
