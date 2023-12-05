@@ -13,8 +13,8 @@
         <div class="container">
             <h1>OOP Shop</h1>
             <ul>
-                <li><a href="index.php"></a>Movies</li>
-                <li><a href="books.php"></a>Books</li>
+                <li><a href="index.php">Movies</a></li>
+                <li><a href="books.php">Books</a></li>
             </ul>
         </div>
     </header>

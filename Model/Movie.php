@@ -31,7 +31,7 @@ class Movie extends Product{
     public function printCard(){
         $image = $this->poster_path;
         $title = $this->title;
-        $content = $this->overview;
+        $content = strlen($this->overview) > 28 ? substr($this->overview, 0, 28) . '...' : $this->overview;
         $custom = $this->getVote();
         $genere = $this->genre->name;
         $prezzo = $this->prezzo;

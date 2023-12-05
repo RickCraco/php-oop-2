@@ -26,12 +26,14 @@ class Book extends Product{
             $book = new Book($item['title'], $item['thumbnailUrl'], $item['longDescription'], rand(1, 100), rand(40, 100), rand(1, 100));
             array_push($books, $book);
         }
+
+        return $books;
     }
 
     public function printCard(){
         $image = $this->imgUrl;
         $title = $this->titolo;
-        $content = $this->descrizione;
+        $content = strlen($this->descrizione) > 28 ? substr($this->descrizione, 0, 28) . '...' : $this->descrizione;
         $custom = "";
         $genere = "";
         $prezzo = $this->prezzo;
